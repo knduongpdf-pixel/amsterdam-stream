@@ -156,8 +156,7 @@ PLAYER_HTML = """<!DOCTYPE html>
 </head>
 <body>
   <video id="v" autoplay playsinline controls muted></video>
-  <p>Amsterdam City Skyline — earthTV live</p>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     const v = document.getElementById('v');
     let hls = null;
