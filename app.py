@@ -148,14 +148,22 @@ PLAYER_HTML = """<!DOCTYPE html>
   <title>Amsterdam Live</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #000; display: flex; flex-direction: column;
-           align-items: center; justify-content: center; min-height: 100vh; }
-    video { width: 100%; max-width: 1280px; max-height: 90vh; }
-    p { color: #555; font-family: sans-serif; font-size: 13px; margin-top: 8px; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+    .wrap { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    video {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-  <video id="v" autoplay playsinline controls muted></video>
+  <div class="wrap">
+    <video id="v" autoplay playsinline muted></video>
+  </div>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     const v = document.getElementById('v');
